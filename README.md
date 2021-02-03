@@ -1,5 +1,5 @@
 <h4 align="center">
-  <img   src="src/logowhite.PNG" height="140" >
+  <img   src="src/logowhite.png" height="140" >
 </h4>
 
  
