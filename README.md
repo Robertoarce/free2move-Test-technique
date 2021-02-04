@@ -33,7 +33,7 @@ Create a script to compute for a given day these summary statistics.
 
 #### 1)  Create and insert data in an local PostgreSQL.
 
-1. Pre-Work Data Check (<a href="https://github.com/Robertoarce/free2move-Test-technique/blob/main/data/Step%201%20-%20Pre-Work%20Data%20Check.ipynb">Pandas</a>) 
+1. Pre-Work Data Check (<a href="Step%201%20-%20Pre-Work%20Data%20Check.ipynb">Pandas</a>) 
     - 1) Detect the useful champs for our mission.
     - 2) Evaluate data cleanness.
 
