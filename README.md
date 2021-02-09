@@ -73,16 +73,18 @@ Create a script to compute for a given day these summary statistics.
 > The top  customers are based on the total price and are ordered from top to bottom.
 > To see a limited list with only the top 10 users use :
     
-    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  03_Main_query_limited.sql
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date="'2019-05-01'"  -f  03_Main_query_limited.sql
 
 
 #### 4) How many customers are repeaters ?
     
-    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  04_Repeated_users.sql
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date="'2019-05-01'"  -f  04_Repeated_users.sql
 
 
 >To put a query into daily production use:
     
-    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date=DATE_VAR  -f  05_Main_query_daily.sql
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date= $(date +"'%Y-%m-%d'") -f  05_Main_query_daily.sql
 
-   *_NB: change the 'DATE_VAR for the command in your system. UNIX = $(date +'%Y-%m-%d')_*
+   *_NB: The commandes here given can vary depending on the OS system (UNIX,POWESHELL..) _*
+   *_ For example for the UNIX system getting today date in the right format is = $(date +"'%Y-%m-%d'")_*
+   *_ The variable 'given_date' in POWERSHELL is assigned -v given_date='2019-05-01' instead of "'2019-05-01'" _*

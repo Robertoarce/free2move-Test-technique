@@ -6,11 +6,11 @@ FROM postgres:latest
 COPY ./data/fixed/. .
 
 
-COPY ./01_Create_tables.sql .
-COPY ./02_Main_query.sql .
-COPY ./03_Main_query_limited.sql .
-COPY ./04_Repeated_users.sql .
-COPY ./05_Main_query_daily.sql .
+COPY ./sql/01_Create_tables.sql .
+COPY ./sql/02_Main_query.sql .
+COPY ./sql/03_Main_query_limited.sql .
+COPY ./sql/04_Repeated_users.sql .
+COPY ./sql/05_Main_query_daily.sql .
 
 #COPY ./00_sqlfile.txt . 
   
