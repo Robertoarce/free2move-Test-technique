@@ -52,13 +52,13 @@ Create a script to compute for a given day these summary statistics.
 # INSTRUCTIONS
 
 
-- Build from image and Launch the container: 
+#### Build from image and Launch the container: 
+    
+    docker-compose up --build -d
 
-* docker-compose up --build -d
-
-- Upload the corrected csv files to the container :
-
-* docker-compose exec data psql -U postgres -h 10.5.0.5 -f  01_Create_tables.sql
+#### Upload the corrected csv files to the container :
+    
+    docker-compose exec data psql -U postgres -h 10.5.0.5 -f  01_Create_tables.sql
 
 > the container will be up, and the service will be running in the back
 
@@ -67,8 +67,8 @@ Create a script to compute for a given day these summary statistics.
 #### 3)  Run that script over the necessary period to inject historic data. Then, identify the top customers
 
 > the date can be changed manually to a specific date by changing the variable 'given_date' (-v given_date='2019-08-01')
-
-* docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  02_Main_query.sql
+    
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  02_Main_query.sql
 
 > The top  customers are based on the total price and are ordered from top to bottom.
 > To see a limited list with only the top 10 users use :
@@ -83,6 +83,6 @@ Create a script to compute for a given day these summary statistics.
 
 >To put a query into daily production use:
 
-   docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  05_Main_query_daily.sql
+   docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  04_Repeated_users.sql
 
    **NB: this will only work on a unix system**
