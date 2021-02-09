@@ -77,12 +77,12 @@ Create a script to compute for a given day these summary statistics.
 
 
 #### 4) How many customers are repeaters ?
-
-  docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  04_Repeated_users.sql
+    
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  04_Repeated_users.sql
 
 
 >To put a query into daily production use:
+    
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date=DATE_VAR  -f  05_Main_query_daily.sql
 
-   docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  04_Repeated_users.sql
-
-   **NB: this will only work on a unix system**
+   *_NB: change the 'DATE_VAR for the command in your system. UNIX = $(date +'%Y-%m-%d')_*
