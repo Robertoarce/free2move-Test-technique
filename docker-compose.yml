@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  data:
+    build: .
+    container_name: free2move
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    #  - POSTGRES_PASSWORD=password
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
+ 
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
+ #   volumes: 
+  #      - 01_init.sql:docker-entrypoint-initdb.d/01_init.sql
