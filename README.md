@@ -68,7 +68,7 @@ Create a script to compute for a given day these summary statistics.
 
 > the date can be changed manually to a specific date by changing the variable 'given_date' (-v given_date='2019-08-01')
     
-    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date='2019-05-01'  -f  02_Main_query.sql
+    docker-compose exec data psql -U postgres -h 10.5.0.5  -v given_date="'2019-05-01'"  -f  02_Main_query.sql
 
 > The top  customers are based on the total price and are ordered from top to bottom.
 > To see a limited list with only the top 10 users use :
