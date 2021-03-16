@@ -2,7 +2,11 @@
   <img   src="src/logowhite.png" height="140" >
 </h4>
 
- 
+```diff
+- Nota Bene: 
++ This test was done under 5 days with no prior knowledge nor experience with docker. 
++ I found it very exciting and challenging!. 
+```
 # Technical TEST 
 
  
@@ -20,7 +24,7 @@ There are four datasets :
 Centralize your projet and code in a Github repository and provide the url once the test is completed.
 
 **To Dos**
-1. Create and insert data in an local PostgreSQL.
+1. Create and insert data in PostgreSQL.
 2. Each day we want to compute summary statistics by customers (spending, orders etc.)
 Create a script to compute for a given day these summary statistics.
 3. Run that script over the necessary period to inject historic data. Then, identify the top customers
@@ -88,3 +92,5 @@ Create a script to compute for a given day these summary statistics.
    *_NB: The commandes here given can vary depending on the OS system (UNIX,POWESHELL..) _*
    *_ For example for the UNIX system getting today date in the right format is = $(date +"'%Y-%m-%d'")_*
    *_ The variable 'given_date' in POWERSHELL is assigned -v given_date='2019-05-01' instead of "'2019-05-01'" _*
+
+
